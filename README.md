@@ -17,6 +17,6 @@ docker exec -it consul_web bin/rake db:migrate
 
 Run a backup of the database for consul
 ```
-docker build -t pg_backupper:1.1 .
-docker run -v ${PWD}/tmp:/backups -e POSTGRES_HOST=consul_db -e POSTGRES_DATABASE=consul --net=consul_nw pg_backupper:1.1
+docker build -t codefornl/pg_backupper:1.0 .
+docker run --name=consul_backup -v ${PWD}/tmp:/backups -e POSTGRES_HOST=consul_db -e POSTGRES_DATABASE=consul --net=consul_nw -d codefornl/pg_backupper:1.0
 ```
