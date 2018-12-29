@@ -1,5 +1,5 @@
 FROM alpine
-RUN apk add --no-cache postgresql-client openssh
+RUN apk add --no-cache postgresql-client
 ENV POSTGRES_USER postgres
 ENV POSTGRES_HOST localhost
 ENV POSTGRES_PASSWORD postgres
